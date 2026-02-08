@@ -49,9 +49,10 @@ resource "aws_s3_bucket_policy" "policy" {
 
 
 resource "aws_s3_object" "object" {
-  bucket = aws_s3_bucket.static.id
+  
   //for_each = fileset("${path.module}"/www,"**/*")
   for_each = fileset("${path.module}/www", "**/*")
+  bucket = aws_s3_bucket.static.id
   key    = each.value
   source = "${path.module}/www/${each.value}"
   
