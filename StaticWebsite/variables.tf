@@ -1,3 +1,3 @@
 variable "bucket_name" {
-  default = "my-static-website-bucket"
+  default = "my-static-website-bucket-naveen"
 }
